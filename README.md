@@ -18,3 +18,31 @@ python setup.py install
 cd loop
 mutmut run
 ```
+
+### Exception handling examples
+
+#### Raise -> pass
+
+```
+pip install pytest  # one time
+cd exceptions/raise
+mutmut run
+mutmut show 7
+```
+
+#### Raise -> pass code and test fixed
+
+```
+cd exceptions/raise-fixed
+mutmut run
+mutmut show
+```
+
+#### Mutate exception catch, else, finally blocks
+
+```
+cd tryblock
+mutmut run
+mutmut show
+```
+
