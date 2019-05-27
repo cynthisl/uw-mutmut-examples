@@ -41,8 +41,15 @@ mutmut show
 #### Mutate exception catch, else, finally blocks
 
 ```
-cd tryblock
+cd exceptions/tryblock
 mutmut run
-mutmut show
+# except block -> pass
+mutmut show 16 # or 18
+# except block -> raise 
+mutmut show 17 # or 19
+# else block -> pass
+mutmut show 20
+# finally block -> pass
+mutmut show 21
 ```
 
