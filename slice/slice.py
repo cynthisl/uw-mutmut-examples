@@ -1,4 +1,4 @@
-class MutSplice(object):
+class MutSlice(object):
 
     def sum(self, arr):
         arr = arr[:]

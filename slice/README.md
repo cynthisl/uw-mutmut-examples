@@ -1,8 +1,8 @@
-# Splice example
+# Slice example
 
 ### Mutation 9
 
-Add a splice operand: [ : x ] to [ 1 : x]
+Add a slice operand: [ : x ] to [ 1 : x]
 
 ```
 -        arr = arr[:-2]
@@ -14,7 +14,7 @@ Add a splice operand: [ : x ] to [ 1 : x]
 
 ### Mutation 10
 
-Remove a splice operand: [ a : b] to [ a : ]
+Remove a slice operand: [ a : b] to [ a : ]
 
 ```
      def sum_except_last_2(self, arr):
