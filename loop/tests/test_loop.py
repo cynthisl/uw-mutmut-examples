@@ -1,10 +1,10 @@
 from loop import MutLoop
 
-KILL_ZERO_FOR = True
-KILL_ONE_FOR = True
-KILL_INLINE = True
-KILL_ZERO_WHILE = True
-KILL_ONE_WHILE = True
+KILL_ZERO_FOR = False
+KILL_ONE_FOR = False
+KILL_INLINE = False
+KILL_ZERO_WHILE = False
+KILL_ONE_WHILE = False
 
 class TestMutLoop:
     
