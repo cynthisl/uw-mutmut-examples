@@ -18,9 +18,18 @@ We primarily focused on adding more mutators to mutmut. Other improvements consi
 
 ### New mutators
 
-* Exceptions - mutate exception raise to pass; mutate try-except handler blocks to both pass and re-raise caught exceptions; mutate try-else and try-finally blocks to pass.
-* Loops - for loops, while loops, and list comprehension for loops mutated to run exactly once and zero times
-* Slices - add and remove sides of the slice operand
+* [Exceptions](exceptions/README.md)
+  * Exception raise to pass
+  * Try-except handler blocks to both pass and re-raise caught exceptions
+  * Try-else and try-finally blocks to pass
+* [Loops](loop/README.md)
+  * For loops - run 0 and 1 times
+  * While loops - run 0 and 1 times
+  * List comprehension for loops - run 1 time
+* [Slices](slice/README.md)
+  * Add start/end to the operand if element is empty
+  * Remove start/end sides of the operand
+  * Different combinations of the above for both sides
 
 ### Other infrastructure improvements
 
@@ -31,7 +40,7 @@ We primarily focused on adding more mutators to mutmut. Other improvements consi
     * This couldn't be a list because type list is already in use.
 * Tag mutations with mutation category names 
   * This makes it easier for a mutmut user to understand which kinds of mutations are productive for a particular code base and test suite.
-  * To use, return the mutation as a tuple with the pack_mutator_tuple(mutation, name).
+  * To use, return the mutation as a tuple with `pack_mutator_tuple(mutation, name)`.
 
 ## How did we test this?
 
