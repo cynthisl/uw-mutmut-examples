@@ -6,6 +6,8 @@ This repository contains example code for the [UW fork of mutmut](https://github
 
 We have made improvements to mutmut, an existing open source Python mutation framework. This will allow us to identify gaps in existing test coverage for Python-based programs and improve the health of our code.   We hope that the improvements we have made will be useful to both the mutmut developers and mutmut users.
 
+The mutation code is located at [uw-mutmut](https://github.com/kc7zep/uw-mutmut) repository, which also contains user-facing documentation. This repository contains example code specific to our improvements and class-specific documentation.
+
 ## How did we pick this?
 
 Mutmut was chosen because it looks easy to read, had a small existing codebase, and we could easily identify areas of improvement. Other Python frameworks considered were mutpy and cosmic_ray.
@@ -22,8 +24,14 @@ We primarily focused on adding more mutators to mutmut. Other improvements consi
 
 ### Other infrastructure improvements
 
-* Multiple mutations per operator.
-* Tag mutations with mutation category names -- this makes it easier for a mutmut user to understand which kinds of mutations are productive for a particular code base and test suite.
+* Multiple mutations per operator 
+  * This improvement was needed because our new mutators take the same node and mutate it multiple ways, but base mutmut could only make one mutation per node. 
+  * To use, pass back the all mutations as values in a dict; they will be parsed out on checking the return type.
+    * Ideally, the return type would be a custom class for mutations, but refactoring the existing mutations to use it is outside the scope of this class.
+    * This couldn't be a list because type list is already in use.
+* Tag mutations with mutation category names 
+  * This makes it easier for a mutmut user to understand which kinds of mutations are productive for a particular code base and test suite.
+  * To use, return the mutation as a tuple with the pack_mutator_tuple(mutation, name).
 
 ## How did we test this?
 
@@ -49,7 +57,10 @@ python setup.py install
 
 ## Running the examples
 
+Our examples depend on pytest
+
 ```
+pip install pytest
 cd loop
 mutmut run
 ```
