@@ -64,6 +64,10 @@ cd uw-mutmut
 python setup.py install
 ```
 
+## How to run
+
+[User workflow](https://github.com/kc7zep/uw-mutmut/tree/project#workflow) is documented in the uw-mutmut readme. The process of generating the mutants is the same, our improvements just added more muants.
+
 ## Running the examples
 
 Our examples depend on pytest
