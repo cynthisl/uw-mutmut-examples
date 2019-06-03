@@ -71,7 +71,7 @@ Loop runs 0 times
 
 ## While Loop Mutations
 
-### Mutation 18
+### Mutation 19
 
 Loop runs 0 times
 
@@ -82,7 +82,7 @@ Loop runs 0 times
              i += 1
 ```
 
-### Mutation 19
+### Mutation 20
 
 Loop runs only once
 
