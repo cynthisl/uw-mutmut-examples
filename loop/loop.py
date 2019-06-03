@@ -10,16 +10,6 @@ class MutLoop(object):
     def inlineFor(self, x):
         input_list = range(0,x)
         output_list = [y+1 for y in input_list]
-        """
-        atom: [y for y in input_list]
-        testlist_comp: y for y in input_list
-        name: y
-        comp_for: for y in input_list
-        keyword: for
-        name: y
-        keyword: in
-        name: input_list
-        """
         return output_list
 
     def simpleWhile(self, x):
