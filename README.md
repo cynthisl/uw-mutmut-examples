@@ -2,6 +2,41 @@
 
 This repository contains example code for the [UW fork of mutmut](https://github.com/kc7zep/uw-mutmut) for CSEP 590: Modern Testing and Debugging Spring 2019. 
 
+## What is this?
+
+We have made improvements to mutmut, an existing open source Python mutation framework. This will allow us to identify gaps in existing test coverage for Python-based programs and improve the health of our code.   We hope that the improvements we have made will be useful to both the mutmut developers and mutmut users.
+
+## How did we pick this?
+
+Mutmut was chosen because it looks easy to read, had a small existing codebase, and we could easily identify areas of improvement. Other Python frameworks considered were mutpy and cosmic_ray.
+
+## What did we make better?
+
+We primarily focused on adding more mutators to mutmut. Other improvements considered were making the UI better and making the tool run faster. We looked at other mutation frameworks (PIT, mutpy, cosmic_ray, major, mujava) and found mutators from them that were missing in mutmut.
+
+### New mutators
+
+* Exceptions - mutate exception raise to pass; mutate try-except handler blocks to both pass and re-raise caught exceptions; mutate try-else and try-finally blocks to pass.
+* Loops - for loops, while loops, and list comprehension for loops mutated to run exactly once and zero times
+* Slices - add and remove sides of the slice operand
+
+### Other infrastructure improvements
+
+* Multiple mutations per operator.
+* Tag mutations with mutation category names -- this makes it easier for a mutmut user to understand which kinds of mutations are productive for a particular code base and test suite.
+
+## How did we test this?
+
+For each new mutator we added unit tests for feature and regression testing. We also created example code (located in this repository) that would show our new mutators, along with tests to kill the mutations.  
+Since all of the new mutators that we added perform multiple mutations, the infrastructure changes to enable multiple mutations were tested indirectly. 
+
+## What were the hard parts?
+
+We quickly discovered that some of the improvements we wanted to make would require larger changes to the architecture of mutmut, which is outside the scope of this class. For example, base mutmut only supports one mutation per operation, and we wanted to mutate the same operator multiple ways. Another quirk was that mutmut uses parso instead of the standard Python AST to parse the language, which was an additional layer of abstraction to learn. mutmut also produces unproductive mutants, such as `XX__main__XX` and `[x for x not in y]`, which will never fail and added noise during development.
+
+Compared to other Python mutation tools, such as mutpy, mutmut's internal design is not sophisticated and lacks comments, so it was difficult to understand how mutmut worked without spending time in the debugger stepping through code.
+
+
 ## Installation
 
 This depends on uw-mutmut:
