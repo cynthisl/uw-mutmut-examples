@@ -1,5 +1,38 @@
 # Loop example
 
+## How to run
+
+Generate the mutants:
+
+```
+mutmut run
+```
+
+View a mutation:
+
+```
+mutmut show <mutation id>
+```
+See below for mutation ids and expected output.
+
+Run just that one mutation:
+
+```
+mutmut run <mutation id>
+```
+
+Fix the code:
+
+In tests/test_loop.py, see the boolean toggles at the top of the file named `KILL_<mutation>`. Set the desired variable to True. This will enable the test that kills the mutant.
+
+Rerun the mutation:
+
+```
+mutmut run <mutation id>
+```
+
+The mutant should be killed.
+
 ## For Loop Mutations
 
 ### Mutation 4
