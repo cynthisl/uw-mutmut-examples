@@ -1,6 +1,22 @@
 # uw-mutmut-examples
 
-This repository contains example code for the [UW fork of mutmut](https://github.com/kc7zep/uw-mutmut) for CSEP 590: Modern Testing and Debugging Spring 2019. 
+This repository contains example code and project deliverables for the [UW fork of mutmut](https://github.com/kc7zep/uw-mutmut) for CSEP 590: Modern Testing and Debugging Spring 2019. 
+
+## Credits
+This project is a collaboration of:
+
+* cynthisl@cs.washington.edu
+* hgotur@cs.washington.edu
+* nsds@cs.washington.edu
+
+Our project is a set of small improvements to the Python mutation testing tool https://github.com/boxed/mutmut.  We owe a huge debt to mutmut's author for writing this tool and making it available on Github.  We intend to work with the author to give our changes back to the main mutmut project.
+
+## Roadmap
+* [This document](README.md) is the main project presentation given in class.
+* https://github.com/kc7zep/uw-mutmut/tree/project is a hard fork of mutmut with a branch containing our improvements.
+* Subdirectories [loop](loop/README.md), [slice](slice/README.md), and [exceptions](exceptions/README.md) contain toy programs showing how each of the new mutations work.
+* Subdirectory [real-world](real-world/README.md) contains a script for running mutmut against three real-world Python projects.
+* [evaluation.md](evaluation.md) analyzes the impact of our changes to mutmut on the projects in real-world.
 
 ## What is this?
 
