@@ -14,9 +14,13 @@ Mutmut was chosen because it looks easy to read, had a small existing codebase, 
 
 ## What did we make better?
 
-We primarily focused on adding more mutators to mutmut. Other improvements considered were making the UI better and making the tool run faster. We looked at other mutation frameworks (PIT, mutpy, cosmic_ray, major, mujava) and found mutators from them that were missing in mutmut.
+We considered improvements such as making the UI better and making the tool run faster, but we settled on two key functionality improvements:
+* Adding more mutators to increase coverage
+* Adding additional mutation functionality to help boost the feature set of mutmut
 
 ### New mutators
+
+We primarily chose new mutators to add by looking at other mutation frameworks (PIT, mutpy, cosmic_ray, major, mujava) and picking a set of mutators that were prevalent and seemed likely to be useful. The list of new  mutators we added were:
 
 * [Exceptions](exceptions/README.md)
   * Exception raise to pass
@@ -32,6 +36,8 @@ We primarily focused on adding more mutators to mutmut. Other improvements consi
   * Different combinations of the above for both sides
 
 ### Other infrastructure improvements
+
+Beyond adding more mutators, we also added a few functionality improvements to mutmut. One of the improvements was necessary to support the mutations we added, but it also helps extend mutmut to the posibility of more types of mutations. The other helps lay the groundwork for better analysis of the results of a mutation run, both for developers of mutmut and end users who are using mutmut on their own code. The infrastructure improvements we added were:
 
 * Multiple mutations per operator 
   * This improvement was needed because our new mutators take the same node and mutate it multiple ways, but base mutmut could only make one mutation per node. 
