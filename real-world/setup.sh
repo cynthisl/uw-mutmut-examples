@@ -64,10 +64,6 @@ fi
 git clone https://github.com/kc7zep/uw-mutmut
 pushd uw-mutmut
 git checkout project
-# TODO(ns): remove this patch once all the PRs for fixing the
-# deepcopy problem are merged into the project branch
-#
-sed -i -e 's/copy.deepcopy/copy.copy/g' mutmut/__init__.py
 popd
 
 # Get the example projects
