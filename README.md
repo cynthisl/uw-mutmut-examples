@@ -64,10 +64,11 @@ Beyond adding more mutators, we also added a few functionality improvements to m
   * This makes it easier for a mutmut user to understand which kinds of mutations are productive for a particular code base and test suite.
   * To use, return the mutation as a tuple with `pack_mutator_tuple(mutation, name)`.
 
-## How did we test this?
+## Testing Infrastructure
 
-For each new mutator we added unit tests for feature and regression testing. We also created example code (located in this repository) that would show our new mutators, along with tests to kill the mutations.  
-Since all of the new mutators that we added perform multiple mutations, the infrastructure changes to enable multiple mutations were tested indirectly. 
+There are two levels of testing we used to test mutmut. The first is the test suite in the mutmut repository. The architecture of the suite is that each file has a corresponding test file plus one additional test file specifically to test mutations. Inside each test file, test functions isolate individual functions in the corresponding module, run them, and assert that the output matches the expected output and any other post-conditions are met. These tests are essentially unit tests where each function is a "unit". Mutmut uses [pytest](https://docs.pytest.org/en/latest/) as its testing framework and  [tox](https://tox.readthedocs.io/en/latest/) to automate the process of setting up the environment and running the tests. As we added new mutators, we added tests for these mutators to the suite of unit tests and ran tox to validate the expected behavior and also give us confidence that we didn't regress other code. We also added tests for new functionality, like support for multiple mutations.
+
+The second level of testing is this repository. We created several sample programs and tests that would allow us to test our mutators end-to-end. The sample programs each contain code that exercise the new mutators that we added. This allowed us to see the resulting output of mutmut and validate that our mutators not only mutated the code correctly, but also that the reporting of the number of mutations killed/survived was correct after our changes and that users would be able to show new mutations and properly see diffs.
 
 ## What were the hard parts?
 
