@@ -14,8 +14,8 @@ Our project is a set of small improvements to the Python mutation testing tool h
 ## Roadmap
 * [This document](README.md) is the main project presentation given in class.
 * https://github.com/kc7zep/uw-mutmut/tree/project is a hard fork of mutmut with a branch containing our improvements.
-* Subdirectories [loop](loop/README.md), [slice](slice/README.md), and [exceptions](exceptions/README.md) contain toy programs showing how each of the new mutations work.
-* Subdirectory [real-world](real-world/README.md) contains a script for running mutmut against three real-world Python projects.
+* Subdirectories [loop](loop/), [slice](slice/), and [exceptions](exceptions/) contain toy programs showing how each of the new mutations work.
+* Subdirectory [real-world](real-world/) contains a script for running mutmut against three real-world Python projects.
 * [evaluation.md](evaluation.md) analyzes the impact of our changes to mutmut on the projects in real-world.
 
 ## What is this?
