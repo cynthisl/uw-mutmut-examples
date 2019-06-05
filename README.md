@@ -93,10 +93,11 @@ python setup.py install
 
 ## Running the examples
 
-Our examples depend on pytest
+Our examples depend on pytest. See example subdirectories for the mutation ids of our new mutations.
 
 ```
 pip install pytest
-cd loop
+cd loop # or exception or slice, directory of example
 mutmut run
+mutmut show <mutation id>
 ```
